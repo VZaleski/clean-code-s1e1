@@ -5,18 +5,18 @@
   font-family: Lato, sans-serif;
 }
 
-.info {
+.header {
   width: 500px;
   margin: 0 auto;
   display: block;
   text-align: right;
 }
 
-.info-image {
+.header__image {
   width: 100%;
 }
 
-.more-inf {
+.header__link {
   font-family: fantasy, cursive;
 }
 
@@ -40,17 +40,21 @@
   flex-grow: 1;
 }
 
-.task-wrapper {
+.add-element__content {
   display: flex;
+  margin-top: 16px;
 }
 
-.list {
+.todo__list,
+.completed__list {
   margin: 0;
   padding: 0px;
 }
 
-.list-element, 
-.title {
+.todo__list-element, 
+.todo__title,
+.completed__list-element,
+.completed__title {
   list-style: none;
 }
 
@@ -73,8 +77,9 @@
   color: #3a3a3a;
 }
 /* Heading */
-.title,
-.add-element__field {
+.todo__title,
+.completed__title,
+.add-element__title {
   color: #333;
   font-weight: 700;
   font-size: 15px;
@@ -84,7 +89,7 @@
   text-transform: uppercase;
 }
 
-.list__element-text,
+.main__text,
 .add-element__text {
   margin: 0;
   font-size: 18px;
@@ -102,26 +107,26 @@
   color: #333;
 }
 
-.list__element-text:focus {
+.main__text:focus {
   color: #333;
 }
 
 /* New Task */
-.add-element__field {
+.add-element__text {
   display: block;
-  margin: 0 0 20px;
 }
 
 #new-task {
   width: 318px;
 }
 
-.add-button:hover {
+.add-element__button:hover {
   color: #0fc57c;
 }
 
 /* Task list */
-.list__element {
+.todo__list-element,
+.completed__list-element {
   overflow: hidden;
   padding: 20px 0;
   border-bottom: 1px solid #eee;
@@ -130,7 +135,11 @@
   align-items: center;
 }
 
-.list__element > * {
+.todo__list-element > * {
+  vertical-align: middle;
+}
+
+.completed__list-element > * {
   vertical-align: middle;
 }
 
@@ -138,47 +147,48 @@
   margin: 0 10px;
 }
 
-.list__element-field {
+.main__field {
   padding-left: 10px;
   box-sizing: border-box;
   font-size: 18px;
   width: 226px;
 }
 
-.list__element > .list__element-text {
+.todo__list-element > .main__text,
+.completed__list-element > .main__text {
   width: 226px;
 }
 
-.delete:hover {
+.main__delete-btn:hover {
   color: #cf2323;
 }
 
-.delete-image {
+.main__delete-image {
   height: 2em;
   transform: rotateZ(45deg);
   transition: transform 200ms ease-in;
 }
 
-.delete-image:hover {
+.main__delete-image:hover {
   transform: rotateZ(0);
 }
 
 /* Completed */
-#completed .list__element-field {
+#completed .main__field {
   text-decoration: line-through;
   color: #888;
 }
 
 /* Edit Task */
-.list__element-text {
+.main__text {
   display: none;
 }
 
-.edit-mode .list__element-text {
+.edit-mode .main__text {
   display: inline-block;
   width: 224px;
 }
 
-.edit-mode .list__element-field {
+.edit-mode .main__field {
   display: none;
 }
